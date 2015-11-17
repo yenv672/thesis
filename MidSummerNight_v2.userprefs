@@ -1,0 +1,18 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyOBJ/script/mainMechanic/obj/triggerZone.cs">
+    <Files>
+      <File FileName="Assets/MyOBJ/script/mainMechanic/player/inToDark.cs" Line="31" Column="57" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/player/playerStatus.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/triggerAction.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/tool&amp;controller/findName.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/triggerZone.cs" Line="6" Column="38" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/ash_triggerZone.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/player/playerChangeLayer.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
