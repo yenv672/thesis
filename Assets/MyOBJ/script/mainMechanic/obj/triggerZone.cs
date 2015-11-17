@@ -23,6 +23,9 @@ public class triggerZone : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider who){
+		if(who.tag == "change_LightWorld"){
+
+		}
 		if(who.tag == "Player"){
 			playerStatus.inDark_Player = false;
 			sent = false;
