@@ -103,6 +103,7 @@
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\interactiveGenerater.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\materialFading.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\moving.cs" />
+     <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\objStatus.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\recieve.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\rotatioin.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\triggerAction.cs" />

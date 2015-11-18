@@ -27,8 +27,8 @@ public class triggerAction : MonoBehaviour {
 //		print (transform.name +" said indark:"+ inDark);
 
 		if(!playerStatus.inDark_Player){
-			if(!triggerZone.sent){
-				triggerZone.sent = true;
+			if(!triggerZone.sent_player){
+				triggerZone.sent_player = true;
 				player.SendMessage("IntoTheLight",SendMessageOptions.DontRequireReceiver);
 			}
 			changingOBJ(ChangeOBJs_Dark,false);
@@ -36,8 +36,8 @@ public class triggerAction : MonoBehaviour {
 		}else{
 			changingOBJ(ChangeOBJs_Dark,true);
 			changingOBJ(ChangeOBJs_Light,false);
-			if( myColor_A <speed && !triggerZone.sent){
-				triggerZone.sent = true;
+			if( myColor_A <speed && !triggerZone.sent_player){
+				triggerZone.sent_player = true;
 				player.SendMessage("GetOutTheLight",SendMessageOptions.DontRequireReceiver);
 			}
 		}
@@ -46,31 +46,45 @@ public class triggerAction : MonoBehaviour {
 	}
 	
 	
-	void changingOBJ(GameObject[] item, bool OBJ_Show){
+	public void changingOBJ(GameObject[] item, bool OBJ_Show){
 		for(int i=0;i<item.Length;i++){
-			//			print ("who: "+item[i]+" bool: "+ OBJ_Show);
-			if(item[i].GetComponent<Renderer>()){
-				if(!item[i].GetComponent<Renderer>().enabled) item[i].GetComponent<Renderer>().enabled = true;
-				Color myColor = item[i].GetComponent<Renderer>().material.color;
-				myColor_A = myColor.a;
-				myColor_A = gradually(myColor_A,OBJ_Show);
-				item[i].GetComponent<Renderer>().material.color = new Color(myColor.r,myColor.g,myColor.b,myColor_A);
-				if(myColor_A<speed){
-					item[i].GetComponent<Renderer>().enabled = false;
+			bool action = true;
+			bool OBj_Show_temp = OBJ_Show;
+
+			if(item[i].tag == ChangeOBJTag_LightWorld ){
+				if((item[i].GetComponent("objStatus") as MonoBehaviour).enabled){ //if light obj in light world-->show
+					if(item[i].GetComponent<Renderer>().enabled)	action = false; //if already render,dont action
+				}else{ // if light obj not in light world --> notshow
+					OBj_Show_temp = false;
+				}
+				 
+			}
+
+			if(action){
+				if(item[i].GetComponent<Renderer>()){
+					if(!item[i].GetComponent<Renderer>().enabled) item[i].GetComponent<Renderer>().enabled = true;
+					Color myColor = item[i].GetComponent<Renderer>().material.color;
+					myColor_A = myColor.a;
+					myColor_A = gradually(myColor_A,OBj_Show_temp);
+					item[i].GetComponent<Renderer>().material.color = new Color(myColor.r,myColor.g,myColor.b,myColor_A);
+					if(myColor_A<speed){
+						item[i].GetComponent<Renderer>().enabled = false;
+					}
+				}
+				if(item[i].GetComponent<Light>()){
+					float myLightInten = item[i].GetComponent<Light>().intensity;
+					myLightInten = gradually(myLightInten,OBj_Show_temp);
+					item[i].GetComponent<Light>().intensity = myLightInten;
+				}
+				if(item[i].GetComponent<Collider>()){
+					if(!OBj_Show_temp){
+						item[i].GetComponent<Collider>().enabled = false;
+					}else{
+						item[i].GetComponent<Collider>().enabled = true;
+					}
 				}
 			}
-			if(item[i].GetComponent<Light>()){
-				float myLightInten = item[i].GetComponent<Light>().intensity;
-				myLightInten = gradually(myLightInten,OBJ_Show);
-				item[i].GetComponent<Light>().intensity = myLightInten;
-			}
-			if(item[i].GetComponent<Collider>()){
-				if(!OBJ_Show){
-					item[i].GetComponent<Collider>().enabled = false;
-				}else{
-					item[i].GetComponent<Collider>().enabled = true;
-				}
-			}
+
 		}
 	}
 	
