@@ -12,8 +12,9 @@ public class addOnGenerator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		ChangeOBJs = GameObject.FindGameObjectsWithTag(tagToAddhere);
-		print (ChangeOBJs.Length);
+
 		for(int i =0;i<ChangeOBJs.Length;i++){
+//			print (ChangeOBJs[i]);
 			GameObject myChild = Instantiate(addOn,ChangeOBJs[i].transform.position,addOn.transform.rotation) as GameObject;
 			myChild.name = tagToAddhere+i;
 			myChild.transform.SetParent(ChangeOBJs[i].transform);

@@ -52,7 +52,8 @@ public class triggerAction : MonoBehaviour {
 			bool OBj_Show_temp = OBJ_Show;
 
 			if(item[i].tag == ChangeOBJTag_LightWorld ){
-				if((item[i].GetComponent("objStatus") as MonoBehaviour).enabled){ //if light obj in light world-->show
+				objStatus itemStatus = item[i].GetComponent<objStatus>();
+				if(!itemStatus.inDark){ //if light obj in light world-->show
 					if(item[i].GetComponent<Renderer>().enabled)	action = false; //if already render,dont action
 				}else{ // if light obj not in light world --> notshow
 					OBj_Show_temp = false;
@@ -78,9 +79,9 @@ public class triggerAction : MonoBehaviour {
 				}
 				if(item[i].GetComponent<Collider>()){
 					if(!OBj_Show_temp){
-						item[i].GetComponent<Collider>().enabled = false;
+						item[i].GetComponent<Collider>().isTrigger = true;
 					}else{
-						item[i].GetComponent<Collider>().enabled = true;
+						item[i].GetComponent<Collider>().isTrigger = false;
 					}
 				}
 			}

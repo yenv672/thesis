@@ -16,9 +16,11 @@ public class triggerZone : MonoBehaviour {
 
 	void OnTriggerExit(Collider who){
 //	print (transform.name+" said "+who.name+" is out");
-		if(who.tag == "change_LightWorld"){
-			(who.GetComponent("objStatus") as MonoBehaviour).enabled = false;
+
+		if(who.tag == "change_LightWorld" || who.tag == "change_DarkWorld"){
+			who.GetComponent<objStatus>().inDark = true;
 		}
+
 		if(who.tag == "Player"){
 			playerStatus.inDark_Player = true;
 			sent_player = false;
@@ -26,10 +28,11 @@ public class triggerZone : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider who){
-		print("enter"+who.name);
-		if(who.tag == "change_LightWorld"){
-			(who.GetComponent("objStatus") as MonoBehaviour).enabled = true;
+
+		if(who.tag == "change_LightWorld" || who.tag == "change_DarkWorld"){
+			who.GetComponent<objStatus>().inDark = false;
 		}
+
 		if(who.tag == "Player"){
 			playerStatus.inDark_Player = false;
 			sent_player = false;
@@ -37,11 +40,11 @@ public class triggerZone : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider who){
-		print("stay"+who.name);
-		if(who.tag == "change_LightWorld"){
-			print("trigger"+who.name);
-			(who.GetComponent("objStatus") as MonoBehaviour).enabled = true;
+
+		if(who.tag == "change_LightWorld" || who.tag == "change_DarkWorld"){
+			who.GetComponent<objStatus>().inDark = false;
 		}
+
 		if(who.tag == "Player"){
 			playerStatus.inDark_Player = false;
 		}
