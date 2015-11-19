@@ -7,6 +7,7 @@ public class playerStatus : MonoBehaviour {
 	public static bool inDark_Player;
 	public static bool inAshZone;
 	public static GameObject inThisAshZone;
+	public static bool inHealing;
 	public GameObject playerStick;
 	public static Light[] playerStickLight;
 	public static int playerLight = 0;
@@ -27,7 +28,7 @@ public class playerStatus : MonoBehaviour {
 			}
 		}
 
-//		print ("inDark_Player "+ inDark_Player);
+//		print ("inAshZone "+ inAshZone);
 
 		if(playerLight==0 && startCount == 0){
 			areYouDead = true;

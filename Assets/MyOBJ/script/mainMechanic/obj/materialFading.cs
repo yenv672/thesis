@@ -34,7 +34,7 @@ public class materialFading : MonoBehaviour {
 //				print (myLight.intensity);
 				ChangeMaterialEmissionColor(MidColor);
 			}else{
-				//print ("triggerLightColor"+transform.name);
+//				print ("triggerLightColor"+transform.name);
 				ChangeMaterialEmissionColor(LightColor);
 //				print ( transform.name +" into light");
 			}

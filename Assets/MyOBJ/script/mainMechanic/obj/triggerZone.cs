@@ -4,6 +4,7 @@ using System.Collections;
 public class triggerZone : MonoBehaviour {
 
 	//attach this code to the light zone
+	public bool healing = false;
 	public static bool sent_player = true;
 	GameObject player;
 	// Use this for initialization
@@ -25,6 +26,9 @@ public class triggerZone : MonoBehaviour {
 			playerStatus.inDark_Player = true;
 			sent_player = false;
 		}
+
+		playerStatus.inHealing = false;
+
 	}
 
 	void OnTriggerEnter(Collider who){
@@ -36,10 +40,17 @@ public class triggerZone : MonoBehaviour {
 		if(who.tag == "Player"){
 			playerStatus.inDark_Player = false;
 			sent_player = false;
+			if(healing){
+				playerStatus.inHealing = true;
+			}
 		}
 	}
 
 	void OnTriggerStay(Collider who){
+
+		if(healing){
+			playerStatus.inHealing = true;
+		}
 
 		if(who.tag == "change_LightWorld" || who.tag == "change_DarkWorld"){
 			who.GetComponent<objStatus>().inDark = false;

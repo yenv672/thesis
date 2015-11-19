@@ -21,6 +21,8 @@ public class recieve : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		myLight = GetComponentInChildren<Light>();
+		print (myLight);
 		playerStickLight = playerStatus.playerStickLight;
 		if(baseOnThisLight!=null){
 			myLight = baseOnThisLight;
@@ -29,11 +31,13 @@ public class recieve : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		playerStickLight = playerStatus.playerStickLight;
 		if(myLight==null){
 			myLight = GetComponentInChildren<Light>();
 		}
-		
+//		print("which "+which);
 		if(which==1){//take
+			print ("take take tak");
 			to = playerStick.transform.position;
 			iamFlying(ThisTurnLight,myLight);
 			
@@ -53,7 +57,7 @@ public class recieve : MonoBehaviour {
 	}
 
 	void Take(){
-		print ("Take me");
+//		print ("Take me");
 		if(which==0 && ifAnyIntensityIsThisValue(true) && myLight.intensity>0){
 			createLight(look.hitPoint);
 			//fly to player
@@ -67,7 +71,7 @@ public class recieve : MonoBehaviour {
 		if(which==0 && ifAnyIntensityIsThisValue(false) && myLight.intensity<1){
 			createLight(playerStick.transform.position);
 			//fly to obj
-			to = look.hitPoint;
+			to = playerStatus.inThisAshZone.transform.position;
 			which = 2;
 		}
 	}
@@ -78,9 +82,8 @@ public class recieve : MonoBehaviour {
 		
 		if(Vector3.Distance(NewLightObj.transform.position,to)>howCloseToTheTarget){
 			NewLightObj.transform.position += (to-NewLightObj.transform.position)*(1+speed)*Time.deltaTime;
-
 		}else{
-			//print ("turn on the obj light");
+//			print ("turn on the obj light");
 			//turn on the light
 			if(turnItOn.intensity<Brightness){
 //				print (turnItOn.intensity);

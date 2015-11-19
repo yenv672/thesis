@@ -35,7 +35,7 @@ public class playerChangeLayer : MonoBehaviour {
 	}
 
 	void GetOutTheLight(){
-//		print ("into dark");
+		print ("into dark");
 		triggerDark = true;
 		triggerLight = false;
 		LightCamera.GetComponent<Camera>().enabled = false;

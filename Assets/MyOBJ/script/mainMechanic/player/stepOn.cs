@@ -4,7 +4,7 @@ using System.Collections;
 public class stepOn : MonoBehaviour {
 
 //	Transform myparent;
-	public string[] exception;
+	public string[] onlyParentWithThis;
 	public static Vector3 relativeAngle;
 	public static bool setNewAngle = false;
 	Transform myParent;
@@ -23,7 +23,7 @@ public class stepOn : MonoBehaviour {
 		{
 //			print("C my loc: "+player.localRotation.eulerAngles+" my globle "+
 //			      player.rotation.eulerAngles+" my parent "+hit.transform.parent.localRotation.eulerAngles);
-			if(player.transform.parent.parent != hit.transform.parent && !checkYourName(hit.transform.name)){
+			if(player.transform.parent.parent != hit.transform.parent && checkYourName(hit.transform.name)){
 				setNewAngle = true;
 				//print(" hit "+hit.transform.parent.localRotation.eulerAngles);
 				if(hit.transform.parent!=null){
@@ -46,7 +46,7 @@ public class stepOn : MonoBehaviour {
 	}
 
 	bool checkYourName(string yourName){
-		foreach( string x in exception){
+		foreach( string x in onlyParentWithThis){
 			if(x==yourName){
 				return true;
 			}

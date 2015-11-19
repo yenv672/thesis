@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ash_triggerZone : MonoBehaviour {
 
-
+	public GameObject ash;
 
 	void OnTriggerExit(Collider who){
 		//		print (transform.name+" said "+who.name+" is out");
@@ -16,7 +16,7 @@ public class ash_triggerZone : MonoBehaviour {
 	void OnTriggerEnter(Collider who){
 		if(who.tag == "Player"){
 			playerStatus.inAshZone = true;
-			playerStatus.inThisAshZone = this.gameObject;
+			playerStatus.inThisAshZone = ash;
 		}
 	}
 }

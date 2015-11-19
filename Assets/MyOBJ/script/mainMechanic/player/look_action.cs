@@ -13,11 +13,11 @@ public class look_action : MonoBehaviour {
 	public int holdingCount_sum = 20;
 //	int myLightamount = 5;//changeThis
 	string objName;
-	int holdingCount;
+//	int holdingCount;
+	float startTime = -1;
 
 	// Use this for initialization
 	void Start () {
-		holdingCount = holdingCount_sum;
 	}
 	
 	// Update is called once per frame
@@ -25,37 +25,42 @@ public class look_action : MonoBehaviour {
 		if(UI.startInteractUI){// able to interact when UI is active
 
 			if(Input.GetMouseButton(0) && playerStatus.playerLight>1){//shoot
-//				print ("trigger shoot"+ holdingCount);
+				print ("trigger shoot" +(Time.time - startTime));
 				if(playThis_pressing_shoot!=null) playThis_pressing_shoot.Play();
-				
-				holdingCount--;
-				
-				if(holdingCount==0){
-					holdingCount = holdingCount_sum;
+
+				if(startTime==-1){
+					startTime = Time.time;
+				}else if(Time.time - startTime>holdingCount_sum){
+					startTime = -1;
 					this.SendMessage("Shoot",SendMessageOptions.DontRequireReceiver);
 				}
 			}
 
-		}else if(playerStatus.inAshZone){ //able to interact with ash
+		}else if(playerStatus.inAshZone){
+			//able to interact with ash
 			if(Input.GetMouseButton(1)){
-				print ("trigger take ash"+ holdingCount);
+				print ("trigger take ash");
 				if(playThis_pressing_take!=null) playThis_pressing_take.Play();
-				
-				holdingCount--;
-				
-				if(holdingCount==0) interactLife(sendMessage_take,playerStatus.inThisAshZone.transform);
+
+				if(startTime==-1){
+					startTime = Time.time;
+				}else if(Time.time - startTime>holdingCount_sum){
+					interactLife(sendMessage_take,playerStatus.inThisAshZone.transform);
+				}
 				
 			} else if(Input.GetMouseButton(0) && playerStatus.playerLight>1 ){
-				print ("trigger give ash"+ holdingCount);
+				print ("trigger give ash");
 				if(playThis_pressing_give!=null) playThis_pressing_give.Play();
 				
-				holdingCount--;
-				
-				if(holdingCount==0) interactLife(sendMessage_give,playerStatus.inThisAshZone.transform);
+				if(startTime==-1){
+					startTime = Time.time;
+				}else if(Time.time - startTime>holdingCount_sum){
+					interactLife(sendMessage_give,playerStatus.inThisAshZone.transform);
+				}
 				
 			}
 		}else{
-			holdingCount = holdingCount_sum;
+			startTime = -1;
 		}
 	}
 
@@ -63,7 +68,7 @@ public class look_action : MonoBehaviour {
 		print (msg);
 		if(playThis_active!=null) playThis_active.Play();
 
-		sendWhere.transform.SendMessage(msg,SendMessageOptions.DontRequireReceiver);
-		holdingCount = holdingCount_sum;
+		sendWhere.SendMessage(msg,SendMessageOptions.DontRequireReceiver);
+		startTime = -1;
 	}
 }

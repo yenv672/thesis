@@ -22,7 +22,20 @@ public class losingLifeInDark : MonoBehaviour {
 
 			ThisTurnLight.intensity -= speed;
 //			print (ThisTurnLight.intensity);
-		} 
+		}else if(playerStatus.inHealing){
+
+			healing();
+//			print (ThisTurnLight+" "+ThisTurnLight.intensity);
+			ThisTurnLight.intensity += speed;
+		}
+	}
+
+	void healing(){
+		for(int i=playerStickLight.Length-1;i >=0;i--){
+			if(playerStickLight[i].intensity <1){
+				ThisTurnLight = playerStickLight[i];
+			}
+		}
 	}
 
 	void losingWhichLight(){

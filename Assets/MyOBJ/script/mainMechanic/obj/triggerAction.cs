@@ -25,7 +25,7 @@ public class triggerAction : MonoBehaviour {
 		ChangeOBJs_Dark = GameObject.FindGameObjectsWithTag(ChangeOBJTag_DarkWorld);
 		ChangeOBJs_Light = GameObject.FindGameObjectsWithTag(ChangeOBJTag_LightWorld);
 //		print (transform.name +" said indark:"+ inDark);
-
+//		print ("triggerZone.sent_player "+triggerZone.sent_player+" A "+myColor_A);
 		if(!playerStatus.inDark_Player){
 			if(!triggerZone.sent_player){
 				triggerZone.sent_player = true;
@@ -34,9 +34,10 @@ public class triggerAction : MonoBehaviour {
 			changingOBJ(ChangeOBJs_Dark,false);
 			changingOBJ(ChangeOBJs_Light,true);
 		}else{
-			changingOBJ(ChangeOBJs_Dark,true);
 			changingOBJ(ChangeOBJs_Light,false);
-			if( myColor_A <speed && !triggerZone.sent_player){
+			changingOBJ(ChangeOBJs_Dark,true);
+
+			if(!triggerZone.sent_player){
 				triggerZone.sent_player = true;
 				player.SendMessage("GetOutTheLight",SendMessageOptions.DontRequireReceiver);
 			}
