@@ -1,16 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyOBJ/script/mainMechanic/obj/triggerZone.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyOBJ/script/mainMechanic/player/losingLifeInDark.cs">
     <Files>
-      <File FileName="Assets/MyOBJ/script/mainMechanic/player/inToDark.cs" Line="31" Column="57" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/player/playerStatus.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/triggerAction.cs" Line="49" Column="8" />
-      <File FileName="Assets/MyOBJ/script/tool&amp;controller/findName.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/triggerZone.cs" Line="40" Column="40" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/ash_triggerZone.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/player/playerChangeLayer.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/player/look_action.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/player/look_shoot.cs" Line="1" Column="1" />
+      <File FileName="../GameDesignClass/Assets/ghost2.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/materialFading.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/triggerZone.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/player/losingLifeInDark.cs" Line="35" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
