@@ -85,6 +85,7 @@ public class recieve : MonoBehaviour {
 		if(Vector3.Distance(NewLightObj.transform.position,to)>howCloseToTheTarget){
 			NewLightObj.transform.position += (to-NewLightObj.transform.position)*(1+speed)*Time.deltaTime;
 		}else{
+
 //			print ("turn on the obj light");
 			//turn on the light
 			if(turnItOn.intensity<Brightness){
@@ -92,16 +93,21 @@ public class recieve : MonoBehaviour {
 				NewLightObj.GetComponent<Renderer>().enabled = false;
 				turnItOn.intensity += speed;
 				NewLightObj.GetComponent<Light>().intensity -= speed;
-				if(turnItOn.intensity>1){
+				if(turnItOn.intensity>1 && which == 1){
 					createLightNum++;
 					endFlying = !(ifAnyIntensityIsThisValue(true));
 				}
+			}else{
+				createLightNum = 0;
+				which = 0;
+				Destroy(NewLightObj);
 			}
+
 			if(createLightNum==regenrateLightNum || endFlying){
 				//delete this light
 				createLightNum = 0;
-				Destroy(NewLightObj);
 				which = 0;
+				Destroy(NewLightObj);
 			}
 		}
 	}

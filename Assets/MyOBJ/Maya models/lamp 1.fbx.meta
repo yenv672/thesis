@@ -351,7 +351,199 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: glyph:group1
+        weight: 1
+      - path: glyph:group1/group1
+        weight: 1
+      - path: glyph:group1/group1/glyph:pCube3
+        weight: 1
+      - path: glyph:group1/group1/glyph:pCube6
+        weight: 1
+      - path: glyph:group1/group1/glyph:pCube7
+        weight: 1
+      - path: glyph:group1/group1/glyph:pCube8
+        weight: 1
+      - path: glyph:group1/group1/glyph:pCube9
+        weight: 1
+      - path: glyph:group1/group2
+        weight: 1
+      - path: glyph:group1/group2/pCube3 1
+        weight: 1
+      - path: glyph:group1/group2/pCube6 1
+        weight: 1
+      - path: glyph:group1/group2/pCube7 1
+        weight: 1
+      - path: glyph:group1/group2/pCube8 1
+        weight: 1
+      - path: glyph:group1/group2/pCube9 1
+        weight: 1
+      - path: glyph:group1/group3
+        weight: 1
+      - path: glyph:group1/group3/pCube3 2
+        weight: 1
+      - path: glyph:group1/group3/pCube6 2
+        weight: 1
+      - path: glyph:group1/group3/pCube7 2
+        weight: 1
+      - path: glyph:group1/group3/pCube8 2
+        weight: 1
+      - path: glyph:group1/group3/pCube9 2
+        weight: 1
+      - path: glyph:group1/group4
+        weight: 1
+      - path: glyph:group1/group4/pCube3 3
+        weight: 1
+      - path: glyph:group1/group4/pCube6 3
+        weight: 1
+      - path: glyph:group1/group4/pCube7 3
+        weight: 1
+      - path: glyph:group1/group4/pCube8 3
+        weight: 1
+      - path: glyph:group1/group4/pCube9 3
+        weight: 1
+      - path: glyph:imagePlane1
+        weight: 1
+      - path: glyph:pCube1
+        weight: 1
+      - path: glyph:pCube1/glyph:transform2
+        weight: 1
+      - path: glyph:pCube2
+        weight: 1
+      - path: glyph:pCube2/glyph:transform1
+        weight: 1
+      - path: glyph:pCube4
+        weight: 1
+      - path: glyph:pCube4/glyph:transform4
+        weight: 1
+      - path: glyph:pCube5
+        weight: 1
+      - path: glyph:pCube5/glyph:transform3
+        weight: 1
+      - path: glyph:pPlane5
+        weight: 1
+      - path: glyph:pPlane5/glyph:transform8
+        weight: 1
+      - path: glyph:pPlane6
+        weight: 1
+      - path: glyph:pPlane6/glyph:transform7
+        weight: 1
+      - path: glyph:pPlane7
+        weight: 1
+      - path: glyph:pPlane7/glyph:transform6
+        weight: 1
+      - path: glyph:pPlane8
+        weight: 1
+      - path: glyph:pPlane8/glyph:transform5
+        weight: 1
+      - path: glyph:pPlane11
+        weight: 1
+      - path: glyph:pPlane11/glyph:transform10
+        weight: 1
+      - path: glyph:pPlane12
+        weight: 1
+      - path: glyph:pPlane12/glyph:transform9
+        weight: 1
+      - path: group5
+        weight: 1
+      - path: group5/pCube14
+        weight: 1
+      - path: group5/pCube15
+        weight: 1
+      - path: group5/pCube16
+        weight: 1
+      - path: group5/pCube17
+        weight: 1
+      - path: group6
+        weight: 1
+      - path: group6/pCube14 1
+        weight: 1
+      - path: group6/pCube15 1
+        weight: 1
+      - path: group6/pCube16 1
+        weight: 1
+      - path: group6/pCube17 1
+        weight: 1
+      - path: group7
+        weight: 1
+      - path: group7/pCube14 2
+        weight: 1
+      - path: group7/pCube15 2
+        weight: 1
+      - path: group7/pCube16 2
+        weight: 1
+      - path: group7/pCube17 2
+        weight: 1
+      - path: pCube1
+        weight: 1
+      - path: pCube2
+        weight: 1
+      - path: pCube3
+        weight: 1
+      - path: pCube4
+        weight: 1
+      - path: pCube5
+        weight: 1
+      - path: pCube6
+        weight: 1
+      - path: pCube7
+        weight: 1
+      - path: pCube8
+        weight: 1
+      - path: pCube9
+        weight: 1
+      - path: pCube10
+        weight: 1
+      - path: pCube11
+        weight: 1
+      - path: pCube12
+        weight: 1
+      - path: pCube13
+        weight: 1
+      - path: pCube18
+        weight: 1
+      - path: pCube19
+        weight: 1
+      - path: pCube20
+        weight: 1
+      - path: pCube21
+        weight: 1
+      - path: pTorus1
+        weight: 1
+      - path: pTorus2
+        weight: 1
+      - path: pTorus3
+        weight: 1
+      - path: pTorus4
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -24,7 +24,7 @@ public class look_action : MonoBehaviour {
 	void Update () {
 		if(UI.startInteractUI){// able to interact when UI is active
 
-			if(Input.GetMouseButton(0) && playerStatus.playerLight>1){//shoot
+			if(Input.GetMouseButtonUp(0) && playerStatus.playerLight>1){//shoot
 				print ("trigger shoot" +(Time.time - startTime));
 				if(playThis_pressing_shoot!=null) playThis_pressing_shoot.Play();
 
