@@ -8,7 +8,7 @@ public class particalEffect : MonoBehaviour {
 	public GameObject giveLightPar;
 	public GameObject takeLightPar;
 
-	float timer = 2;
+	float timer = 5;
 	float startTime = -1f;
 
 	// Use this for initialization
@@ -18,15 +18,24 @@ public class particalEffect : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(based.intensity<gate && !takeLightPar.activeSelf){//take
-			takeLightPar.SetActive(true);
+		if(look_action.taking){//take
+			print("active take par");
+			if(startTime==-1) takeLightPar.SetActive(true);
 			startTime = Time.time;
-		}
-		if(based.intensity>1-gate && !giveLightPar.activeSelf){//give
+		}else if(look_action.giving){//give
+			print("active give par");
+			if(startTime==-1) {
+				giveLightPar.transform.position = playerStatus.inThisAshZone.transform.position;
+				giveLightPar.SetActive(true);
+			}
+			startTime = Time.time;
+		}else{
+			takeLightPar.SetActive(false);
 			giveLightPar.SetActive(false);
-			startTime = Time.time;
+			startTime = -1;
 		}
 		if(startTime!=-1 && Time.time - startTime>timer){
+			print ("cancel par");
 			takeLightPar.SetActive(false);
 			giveLightPar.SetActive(false);
 			startTime = -1;

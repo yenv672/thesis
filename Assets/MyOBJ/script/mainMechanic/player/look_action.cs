@@ -4,6 +4,8 @@ using System.Collections;
 public class look_action : MonoBehaviour {
 
 	public static look_action lookACT;
+	public static bool giving = false;
+	public static bool taking = false;
 	public string sendMessage_take = "Take";
 	public string sendMessage_give = "Give";
 	public AudioSource playThis_pressing_take;
@@ -41,28 +43,34 @@ public class look_action : MonoBehaviour {
 		}else if(playerStatus.inAshZone){
 			//able to interact with ash
 			if(Input.GetMouseButton(1)){
+				taking = true;
 				print ("trigger take ash");
 				if(playThis_pressing_take!=null) playThis_pressing_take.Play();
 
 				if(startTime==-1){
 					startTime = Time.time;
 				}else if(Time.time - startTime>holdingCount_sum){
+					taking = false;
 					interactLife(sendMessage_take,playerStatus.inThisAshZone.transform);
 				}
 				
 			} else if(Input.GetMouseButton(0) && playerStatus.playerLight>1 ){
+				giving = true;
 				print ("trigger give ash");
 				if(playThis_pressing_give!=null) playThis_pressing_give.Play();
 				
 				if(startTime==-1){
 					startTime = Time.time;
 				}else if(Time.time - startTime>holdingCount_sum){
+					taking = false;
 					interactLife(sendMessage_give,playerStatus.inThisAshZone.transform);
 				}
 				
 			}
 		}else{
 			startTime = -1;
+			taking = false;
+			giving = false;
 		}
 	}
 
