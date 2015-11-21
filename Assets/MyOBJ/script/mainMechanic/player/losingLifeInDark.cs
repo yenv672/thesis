@@ -5,6 +5,7 @@ public class losingLifeInDark : MonoBehaviour {
 
 	public float zeroGate = 0.01f;
 	public float speed;
+	public float healingSpeed;
 	Light[] playerStickLight;
 	Light ThisTurnLight;
 
@@ -25,8 +26,9 @@ public class losingLifeInDark : MonoBehaviour {
 		}else if(playerStatus.inHealing){
 
 			healing();
-//			print (ThisTurnLight+" "+ThisTurnLight.intensity);
-			ThisTurnLight.intensity += speed;
+			if(ThisTurnLight!=null && ThisTurnLight.intensity<1){
+				ThisTurnLight.intensity += healingSpeed;
+			}
 		}
 	}
 

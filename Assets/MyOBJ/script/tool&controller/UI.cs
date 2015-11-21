@@ -5,7 +5,10 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour {
 
 	public Image UITarget;
+	public Image UIZone;
 	public Color activeColor;
+	public float targetColorA;
+	public float speed;
 	public static bool startInteractUI;
 	float width;
 
@@ -16,12 +19,28 @@ public class UI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(look.hittingSomething && findName.checkYourName(look.hitThis.name)){
-			startInteractUI = true;
+		if(playerStatus.inAshZone){
+			UITarget.enabled = false;
+			ColorChange(targetColorA);
 		}else{
-			startInteractUI = false;
+			UITarget.enabled = true;
+			ColorChange(0);
+			if(look.hittingSomething && findName.checkYourName(look.hitThis.name)){
+				startInteractUI = true;
+			}else{
+				startInteractUI = false;
+			}
 		}
+
 		UIChange();
+	}
+
+	void ColorChange(float target){
+		if(target>0){
+			if(UIZone.color.a < target)	UIZone.color = new Color(UIZone.color.r,UIZone.color.g,UIZone.color.b,UIZone.color.a+speed);
+		}else{
+			if(UIZone.color.a > 0 )	UIZone.color = new Color(UIZone.color.r,UIZone.color.g,UIZone.color.b,UIZone.color.a-speed);
+		}
 	}
 
 	void UIChange(){

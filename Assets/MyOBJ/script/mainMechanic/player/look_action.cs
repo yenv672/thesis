@@ -28,12 +28,14 @@ public class look_action : MonoBehaviour {
 				print ("trigger shoot" +(Time.time - startTime));
 				if(playThis_pressing_shoot!=null) playThis_pressing_shoot.Play();
 
-				if(startTime==-1){
-					startTime = Time.time;
-				}else if(Time.time - startTime>holdingCount_sum){
-					startTime = -1;
-					this.SendMessage("Shoot",SendMessageOptions.DontRequireReceiver);
-				}
+				this.SendMessage("Shoot",SendMessageOptions.DontRequireReceiver);
+
+//				if(startTime==-1){
+//					startTime = Time.time;
+//				}else if(Time.time - startTime>holdingCount_sum){
+//					startTime = -1;
+//					this.SendMessage("Shoot",SendMessageOptions.DontRequireReceiver);
+//				}
 			}
 
 		}else if(playerStatus.inAshZone){

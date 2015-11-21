@@ -52,7 +52,7 @@ public class triggerAction : MonoBehaviour {
 			bool action = true;
 			bool OBj_Show_temp = OBJ_Show;
 
-			if(item[i].tag == ChangeOBJTag_LightWorld ){
+			if(item[i].tag == ChangeOBJTag_LightWorld && playerStatus.inDark_Player){
 				objStatus itemStatus = item[i].GetComponent<objStatus>();
 				if(!itemStatus.inDark){ //if light obj in light world-->show
 					if(item[i].GetComponent<Renderer>().enabled)	action = false; //if already render,dont action

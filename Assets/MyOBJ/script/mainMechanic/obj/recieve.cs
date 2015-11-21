@@ -9,7 +9,9 @@ public class recieve : MonoBehaviour {
 	public float Brightness = 1.0f;
 	public AudioClip playThis;
 	public Light baseOnThisLight;
+	public int regenrateLightNum = 3;
 
+	int createLightNum = 0;
 	float howCloseToTheTarget = 1.5f;
 	Light myLight = null;
 	Light[] playerStickLight;
@@ -22,7 +24,7 @@ public class recieve : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myLight = GetComponentInChildren<Light>();
-		print (myLight);
+//		print (myLight);
 		playerStickLight = playerStatus.playerStickLight;
 		if(baseOnThisLight!=null){
 			myLight = baseOnThisLight;
@@ -57,7 +59,7 @@ public class recieve : MonoBehaviour {
 	}
 
 	void Take(){
-//		print ("Take me");
+		print ("Take me");
 		if(which==0 && ifAnyIntensityIsThisValue(true) && myLight.intensity>0){
 			createLight(look.hitPoint);
 			//fly to player
@@ -77,7 +79,7 @@ public class recieve : MonoBehaviour {
 	}
 
 	void iamFlying(Light turnItOn,Light turnItOff){
-		
+		bool endFlying = false;
 		turnItOff.intensity = 0;
 		
 		if(Vector3.Distance(NewLightObj.transform.position,to)>howCloseToTheTarget){
@@ -86,12 +88,18 @@ public class recieve : MonoBehaviour {
 //			print ("turn on the obj light");
 			//turn on the light
 			if(turnItOn.intensity<Brightness){
-//				print (turnItOn.intensity);
+//				print (turnItOn.intensity + " createLightNum "+ createLightNum);
 				NewLightObj.GetComponent<Renderer>().enabled = false;
-				turnItOn.intensity += speed*Time.deltaTime;
-				NewLightObj.GetComponent<Light>().intensity -= speed*Time.deltaTime;
-			}else{
+				turnItOn.intensity += speed;
+				NewLightObj.GetComponent<Light>().intensity -= speed;
+				if(turnItOn.intensity>1){
+					createLightNum++;
+					endFlying = !(ifAnyIntensityIsThisValue(true));
+				}
+			}
+			if(createLightNum==regenrateLightNum || endFlying){
 				//delete this light
+				createLightNum = 0;
 				Destroy(NewLightObj);
 				which = 0;
 			}

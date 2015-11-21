@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyOBJ/script/mainMechanic/player/losingLifeInDark.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/MyOBJ/script/mainMechanic/obj/crossover.cs">
     <Files>
-      <File FileName="../GameDesignClass/Assets/ghost2.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/materialFading.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/triggerZone.cs" Line="1" Column="1" />
-      <File FileName="Assets/MyOBJ/script/mainMechanic/player/losingLifeInDark.cs" Line="35" Column="39" />
+      <File FileName="Assets/MyOBJ/script/tool&amp;controller/UI.cs" Line="40" Column="30" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/ash_triggerZone.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/player/playerStatus.cs" Line="1" Column="1" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/crossover.cs" Line="22" Column="31" />
+      <File FileName="Assets/MyOBJ/script/mainMechanic/obj/deadWithoutCrossover.cs" Line="39" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

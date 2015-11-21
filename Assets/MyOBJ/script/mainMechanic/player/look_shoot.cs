@@ -48,6 +48,7 @@ public class look_shoot : MonoBehaviour {
 
 	
 	void Shoot(){
+		print("shoot!!");
 		if(which==0 && ifAnyIntensityIsThisValue(false)){
 			createLight(shootFromHere.position);
 			//fly to here

@@ -6,7 +6,7 @@ public class floating : MonoBehaviour {
 	public float SinWave_Freq = 5f;
 	public float SinWave_range = 0.01f;
 
-	bool toObect = false;
+	bool toObect = true;
 	Vector3 playerPosition;
 	Vector3 origin;
 	float randomFactor;
