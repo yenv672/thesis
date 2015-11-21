@@ -56,6 +56,7 @@
      <Compile Include="Assets\Import Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
      <Compile Include="Assets\Import Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
      <Compile Include="Assets\Import Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
+     <Compile Include="Assets\Import Assets\Simple Particle Ribbon\Scripts\ReverseNormals.cs" />
      <Compile Include="Assets\Invector-3rdPersonController\Camera\TPCamera.cs" />
      <Compile Include="Assets\Invector-3rdPersonController\Camera\TPCameraListData.cs" />
      <Compile Include="Assets\Invector-3rdPersonController\Camera\TPCameraState.cs" />
@@ -103,6 +104,7 @@
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\materialFading.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\moving.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\objStatus.cs" />
+     <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\particalEffect.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\recieve.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\rotatioin.cs" />
      <Compile Include="Assets\MyOBJ\script\mainMechanic\obj\triggerAction.cs" />
@@ -179,6 +181,7 @@
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Import Assets\Simple Particle Ribbon\readme_Simple_Particle_Ribbon.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
